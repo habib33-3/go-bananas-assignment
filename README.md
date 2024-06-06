@@ -22,6 +22,8 @@ Install dependencies
 
 Start the server
 
-````bash
+```bash
   npm run dev
-````
+```
+
+[Live Link](https://go-bananas-assignment-black.vercel.app/)
