@@ -11,7 +11,6 @@ const DataCards = ({ data }) => {
         sx={{
           fontSize: "32px",
           fontWeight: 700,
-
           marginBottom: 4,
         }}
       >
@@ -30,7 +29,7 @@ const DataCards = ({ data }) => {
           <Box
             key={item.id}
             sx={{
-              width: "350px",
+              width: "300px",
             }}
           >
             <DataCard item={item} />
