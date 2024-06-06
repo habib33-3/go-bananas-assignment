@@ -1,8 +1,9 @@
-import { Box, Container, Skeleton, Stack } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import DataCards from "./components/DataCards/DataCards";
-import useData from "./components/hooks/useData";
 import SearchBox from "./components/SearchBox/SearchBox";
 import { useState, useEffect } from "react";
+import useData from "./components/hooks/useData";
+import Loader from "./components/Loader/Loader";
 
 const App = () => {
   const { data, isLoading } = useData();
@@ -19,38 +20,7 @@ const App = () => {
   }, [data, searchValue]);
 
   if (isLoading) {
-    return (
-      <Container maxWidth="lg">
-        <Box sx={{ maxWidth: "90vw", margin: "auto", mt: 4 }}>
-          <Stack spacing={2}>
-            <Skeleton
-              variant="text"
-              width="80%"
-              height={40}
-              animation="wave"
-            />
-            <Skeleton
-              variant="rectangular"
-              width="100%"
-              height={200}
-              animation="wave"
-            />
-            <Skeleton
-              variant="rectangular"
-              width="100%"
-              height={200}
-              animation="wave"
-            />
-            <Skeleton
-              variant="rectangular"
-              width="100%"
-              height={200}
-              animation="wave"
-            />
-          </Stack>
-        </Box>
-      </Container>
-    );
+    return <Loader />;
   }
 
   return (
